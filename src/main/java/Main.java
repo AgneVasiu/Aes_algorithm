@@ -132,10 +132,10 @@ public class Main {
                 encyptStr = encrypt(plainString, key);
                 System.out.println(plainString);
                 System.out.println(encyptStr);
-                saveToFile(encyptStr, key);
+                saveToFile(encyptStr);
             } else if (choice == 2) {
                 //encyptStr = encrypt(plainString, key);
-                String decryptedString = decrypt(encyptStr, key);
+                String decryptedString = decrypt(encyptStr,key);
                 System.out.println(encyptStr);
                 System.out.println(decryptedString);
             }
@@ -144,10 +144,9 @@ public class Main {
 
     }
 
-    private static void saveToFile(String encryptedString, String encryptedKey) throws FileNotFoundException {
+    private static void saveToFile(String encryptedString) throws FileNotFoundException {
         try (PrintWriter out = new PrintWriter("Text.txt")) {
             out.println(encryptedString);
-            out.println(encryptedKey);
         }
     }
 
