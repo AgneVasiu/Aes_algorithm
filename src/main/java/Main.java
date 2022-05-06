@@ -24,7 +24,9 @@ public class Main {
     static SecureRandom rnd = new SecureRandom();
 
     static IvParameterSpec iv = new IvParameterSpec(rnd.generateSeed(16));
-
+/**
+ *Method to set Key
+ */
     public static void setKey(String myKey) {
         MessageDigest identify = null;
         try {
@@ -39,6 +41,10 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Method to set what mode should be used
+     */
 
     private static void setMode() {
         boolean status = true;
@@ -128,7 +134,7 @@ public class Main {
                 System.out.println(encyptStr);
                 saveToFile(encyptStr, key);
             } else if (choice == 2) {
-               // encyptStr = encrypt(plainString, key);
+                //encyptStr = encrypt(plainString, key);
                 String decryptedString = decrypt(encyptStr, key);
                 System.out.println(encyptStr);
                 System.out.println(decryptedString);
